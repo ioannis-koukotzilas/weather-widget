@@ -1,0 +1,238 @@
+/*--------------------------------------------------------------
+# Base
+--------------------------------------------------------------*/
+
+@font-face {
+  font-family: "OpenWeatherIcons";
+  src: url("../fonts/open-weather-icons/OpenWeatherIcons.woff2") format("woff2"),
+    url("../fonts/open-weather-icons/OpenWeatherIcons.woff") format("woff");
+  font-style: normal;
+  font-weight: 400;
+}
+
+:root {
+  --font-primary: "Roboto Flex", sans-serif;
+  --bg-primary: #1b1b1b;
+  --bg-secondary: #252525;
+  --text-primary: #fcfcfc;
+  --text-success: #8cb4ff;
+  --text-info: #c2c2c2;
+  --border-success: #8cb4ff;
+}
+
+html {
+  font-size: 15px;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-primary);
+  line-height: 1.4;
+  font-weight: normal;
+  font-size: 1rem;
+}
+
+a {
+  color: var(--text-primary);
+  text-decoration: underline;
+  text-underline-offset: 0.25rem;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--border-success);
+}
+
+a:hover,
+a:focus,
+a:active,
+a:visited {
+  color: var(--text-primary);
+}
+
+.site-header__container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 1.5rem 24px 0.5rem;
+  border-bottom: 1px solid;
+}
+
+.site-header .site-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.site-main__container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 4.5rem 24px;
+}
+
+.site-footer__container {
+  max-width: 768px;
+  margin: 0 auto;
+  padding: 0.5rem 24px 1.5rem;
+  border-top: 1px solid;
+}
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+
+/* Weather Forecast
+--------------------------------------------- */
+
+@media (min-width: 768px) {
+  .weather-forecast__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 3rem;
+  }
+}
+
+/* Current Weather
+--------------------------------------------- */
+
+.current-weather {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.current-weather .forecast-date {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-success);
+  color: #ff9e8c;
+}
+
+.current-weather .forecast-location {
+  font-size: 1.953rem;
+  font-weight: 500;
+}
+
+.current-weather .forecast-temperature-container {
+  margin: 1.5rem 0 0.75rem;
+  display: flex;
+  align-items: center;
+  background: -webkit-linear-gradient(315deg, #8cb4ff 25%, #ff9e8c);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.current-weather .forecast-temperature-container .forecast-icon {
+  font-size: 4.768rem;
+  margin-right: 1rem;
+}
+
+.current-weather .forecast-temperature-container .forecast-temperature {
+  font-size: 3.815rem;
+  font-weight: 600;
+}
+
+.current-weather .feels-like {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.current-weather .forecast-list-items {
+  list-style: none;
+  margin: 3rem 0 1.5rem;
+  padding: 0 0 0 1.5rem;
+  border-left: 2px solid var(--border-success);
+}
+
+/* Daily Weather
+--------------------------------------------- */
+
+.daily-weather details {
+  margin: 0 auto 0.5rem;
+  background: #282828;
+  color: #fff;
+  border-radius: 4px;
+  padding: 0.65rem 24px;
+}
+
+.daily-weather summary {
+  cursor: pointer;
+  display: grid;
+  grid-template-columns: auto 3fr 3fr 2fr;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+summary ::selection,
+summary ::-moz-selection {
+  background-color: transparent;
+}
+
+.daily-weather summary:before {
+  content: "";
+  border-width: 0.4rem;
+  border-style: solid;
+  border-color: transparent transparent transparent #fff;
+  transform: rotate(0);
+  transform-origin: 0.2rem 50%;
+  transition: 0.25s transform ease;
+}
+
+.daily-weather details[open] > summary:before {
+  transform: rotate(90deg);
+}
+
+.daily-weather details summary::-webkit-details-marker {
+  display: none;
+}
+
+.daily-weather .forecast-date {
+  font-weight: 500;
+}
+
+.daily-weather .forecast-temperature-container {
+  justify-self: center;
+  display: flex;
+  align-items: center;
+  color: var(--text-success);
+}
+
+.daily-weather .forecast-temperature-container .forecast-icon {
+  margin-right: 0.5rem;
+  font-size: 1.563rem;
+}
+
+.daily-weather .forecast-temperature-container .forecast-temperature {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.daily-weather .forecast-description {
+  justify-self: end;
+  text-align: end;
+  font-size: 0.8rem;
+  color: var(--text-info);
+}
+
+.daily-weather .forecast-maxmin-temperature {
+  margin: 1.5rem 0;
+  font-weight: 600;
+}
+
+.daily-weather details > ul {
+  list-style: none;
+  padding: 0 0 0 1.5rem;
+  border-left: 1px solid var(--border-success);
+  margin: 1.5rem 0 1.5rem 0.15rem;
+}
+
+/* Weather Charts
+--------------------------------------------- */
+
+.weather-chart__max-temp-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}

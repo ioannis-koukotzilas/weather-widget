@@ -1,0 +1,81 @@
+.forecast-icon {
+  font-family: "OpenWeatherIcons";
+  display: inline-block;
+  font-weight: normal;
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+}
+
+.forecast-icon[data-icon="01d"]::before {
+  content: "\ea01";
+}
+
+.forecast-icon[data-icon="01n"]::before {
+  content: "\ea02";
+}
+
+.forecast-icon[data-icon="02d"]::before {
+  content: "\ea04";
+}
+
+.forecast-icon[data-icon="02n"]::before {
+  content: "\ea03";
+}
+
+.forecast-icon[data-icon="03d"]::before {
+  content: "\ea05";
+}
+
+.forecast-icon[data-icon="03n"]::before {
+  content: "\ea06";
+}
+
+.forecast-icon[data-icon="04d"]::before {
+  content: "\ea07";
+}
+
+.forecast-icon[data-icon="04n"]::before {
+  content: "\ea08";
+}
+
+.forecast-icon[data-icon="09d"]::before {
+  content: "\ea09";
+}
+
+.forecast-icon[data-icon="09n"]::before {
+  content: "\ea0a";
+}
+
+.forecast-icon[data-icon="10d"]::before {
+  content: "\ea0b";
+}
+
+.forecast-icon[data-icon="10n"]::before {
+  content: "\ea0c";
+}
+
+.forecast-icon[data-icon="11d"]::before {
+  content: "\ea0d";
+}
+
+.forecast-icon[data-icon="11n"]::before {
+  content: "\ea0e";
+}
+
+.forecast-icon[data-icon="13d"]::before {
+  content: "\ea10";
+}
+
+.forecast-icon[data-icon="13n"]::before {
+  content: "\ea12";
+}
+
+.forecast-icon[data-icon="50d"]::before {
+  content: "\ea11";
+}
+
+.forecast-icon[data-icon="50n"]::before {
+  content: "\ea13";
+}
