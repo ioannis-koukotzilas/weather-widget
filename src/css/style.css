@@ -230,6 +230,10 @@ summary ::-moz-selection {
 /* Weather Charts
 --------------------------------------------- */
 
+.weather-chart__container {
+  margin-top: 3rem;
+}
+
 .weather-chart__max-temp-title {
   font-size: 1.25rem;
   font-weight: 500;
