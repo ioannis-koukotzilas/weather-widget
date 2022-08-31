@@ -40,9 +40,11 @@ In our function, the first four lines use the Fetch API to fetch the JSON from t
 - we make the network request using the `fetch()` function, and this returns a Response object.
 - we retrieve the response as JSON using the `json()` function of the Response object.
 
-After all that, the `responseObject` variable will contain the JavaScript object based on the JSON. We are then passed that object to two function calls: `currentWeather(responseObject)` and `dailyWeather(responseObject)` — the first one fills the `<section class="current-weather">` with the correct data, while the second one creates the `<details>` disclosure element which contains the forecast information for each day of the next seven days, and inserts it into the `<section class="daily-weather”>`, as it also pass the correct data into the next seven days max temperature chart we created using the [Chart.js](https://www.chartjs.org/docs/latest/) JavaScript charting.
+After all that, the `responseObject` variable will contain the JavaScript object based on the JSON.
 
-We use a for...of loop to loop through each object in the array. For each one, we create several new elements:
+We are then passed that object to two function calls: `currentWeather(responseObject)` and `dailyWeather(responseObject)` — the first one fills the `<section class="current-weather">` with the correct data, while the second one creates the `<details>` disclosure element which contains the forecast information for each day of the next seven days, and inserts it into the `<section class="daily-weather">`, as it also pass the correct data into the next seven days max temperature chart we created using the [Chart.js](https://www.chartjs.org/docs/latest/) JavaScript charting.
+
+We used a `for...of` statement to loop through each object in the array. For each one, we created several new elements:
 
 ```javascript
 for (const forecast of dailyForecast) {
@@ -62,7 +64,7 @@ for (const forecast of dailyForecast) {
 
 }
 ```
-We created the `chartMaxTemps`, `chartMinTemps` and `chartMinTemps` arrays to store the dates and max temperatures for each day of the next seven days and then passed the data into the datasets of the max temperature chart that we rendered in our page.
+We created the `chartMaxTemps`, `chartMinTemps` and `chartDates` arrays to store the dates and min/max temperatures for each day of the next seven days and then passed the data into the `datasets` of the max temperature chart that we rendered in our page.
 
 ```javascript
 const chartMaxTemps = [];
